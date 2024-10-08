@@ -138,4 +138,5 @@ export interface ChatDispatchFuctions {
     handleError:(error:string)=>void,
 }
 
+
 export type apiErrorTypes = error.NETWORK|error.SERVER|error.CASTERROR|error.CHATEXISIST

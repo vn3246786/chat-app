@@ -13,10 +13,8 @@ import { chat, newMessage } from "./TypeDefinitions"
 import Test from "./Test"
 
 
-export const socket = io("http://localhost:3000",{autoConnect:false})
-
+export const socket = io(import.meta.env.VITE_SERVER_URL,{autoConnect:false})
 function App() {
-
 const {userData}=useContext(userContext)
   const{chatData,handleData}=useContext(chatContext)
 
