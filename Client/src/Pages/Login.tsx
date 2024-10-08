@@ -13,8 +13,8 @@ const [visibility, setVisibility]=useState<Boolean>(false)
 
 const {handleData,handleLoading,handleError,userLoading}=useContext(userContext)
 
-const [email,setEmail] = useState<String>("")
-const [password,setPassword] = useState<String>("")
+const [email,setEmail] = useState<string>("")
+const [password,setPassword] = useState<string>("")
 
 function handleSubmit (e: React.FormEvent<HTMLFormElement>){
   e.preventDefault()

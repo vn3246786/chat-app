@@ -11,10 +11,10 @@ const Register = () => {
   const navigate=useNavigate()
 const {handleData,handleLoading,handleError,userLoading}=useContext(userContext)
 
-const [username,setUsername] = useState<String>("")
-const [email,setEmail] = useState<String>("")
-const [password,setPassword] = useState<String>("")
-const [confirmPassword,setConfirmPassword] = useState<String>("")
+const [username,setUsername] = useState<string>("")
+const [email,setEmail] = useState<string>("")
+const [password,setPassword] = useState<string>("")
+const [confirmPassword,setConfirmPassword] = useState<string>("")
 
 
 const [visibility1, setVisibility1]=useState<Boolean>(false)
