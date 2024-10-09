@@ -8,7 +8,7 @@ import { socket } from "../../App";
 export async function register(user:registerData,dispatchFuctions:UserDispatchFuctions){
     dispatchFuctions.handleLoading()
 try {
-    const res =await axios.post("/api/users/register",user)
+    const res =await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/users/register`,user)
     if(findError(res.data)){
         dispatchFuctions.handleError(res.data)
         toast.error(res.data)

@@ -8,7 +8,7 @@ export async function getChats(id:String,value:ChatDispatchFuctions){
 
   value.handleLoading()
     try {
-        const res = await axios.get(`/api/users/chats/${id}`)
+        const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/users/chats/${id}`)
      if(findError(res.data)){
 value.handleError(res.data)
  }else value.handleData(res.data)
@@ -22,7 +22,7 @@ export async function addChat(id:String,senderId:string,value:ChatDispatchFuctio
 
   value.handleLoading()
     try {
-      const res = await axios.put(`/api/users/add-chat/${id}`,{id:senderId})
+      const res = await axios.put(`${import.meta.env.VITE_SERVER_URL}/api/users/add-chat/${id}`,{id:senderId})
      if(findError(res.data)){
       value.handleError(res.data)
       toast.error(res.data)
@@ -37,7 +37,7 @@ export async function addChat(id:String,senderId:string,value:ChatDispatchFuctio
 export async function updateUnseenMessageCount(id:string,chatId:string){
   
    try {
-     await axios.put(`/api/users/update-unseen/${id}`,{id:chatId})
+     await axios.put(`${import.meta.env.VITE_SERVER_URL}/api/users/update-unseen/${id}`,{id:chatId})
    } catch (error) {
       console.log(error)
    }
