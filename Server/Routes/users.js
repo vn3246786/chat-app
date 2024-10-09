@@ -27,12 +27,18 @@ Router.post("/login",async(req,res)=>{
 try {
     const user = await Users.findOne({email:req.body.email})
     
-const bytes  = Crypto.AES.decrypt(user.password, process.env.CRYPTO_SECRET_KEY);
-const originalPassword = bytes.toString(Crypto.enc.Utf8)
+if(user)
+    {
+    const bytes  = Crypto.AES.decrypt(user.password, process.env.CRYPTO_SECRET_KEY);
+        const originalPassword = bytes.toString(Crypto.enc.Utf8)
 if(originalPassword===req.body.password){
     const {password,chats,...data}=user._doc
     res.json(data)
 }else res.json("username or password is incorrect")
+}else{
+res.json("username or password is incorrect")
+}
+
 } catch (error) {
     console.log(error)
     res.json("server error")
