@@ -5,13 +5,14 @@ import {config} from "dotenv"
 config()
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({})=>{
   
+ return {
     server:{
       proxy:{
-        "/api":`https://chat-app-fve1.onrender.com`
+        "/api":`${process.env.VITE_SERVER_URL}`
       }
     },
     plugins: [react()],
-  
+  }
 })
