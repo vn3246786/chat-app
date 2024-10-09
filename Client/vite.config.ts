@@ -10,7 +10,7 @@ export default defineConfig(({})=>{
  return {
     server:{
       proxy:{
-        "/api":`http://localhost:3000`
+        "/api":`https://chat-app-fve1.onrender.com`
       }
     },
     plugins: [react()],
