@@ -13,7 +13,8 @@ const { type } = require("os");
 
 app.use(cors(
     {
-        origin:process.env.CLIENT_URL
+        origin:process.env.CLIENT_URL,
+        methods:[['GET', 'PUT', 'POST']]
     }
 ))
 app.use(bodyParser.json())
