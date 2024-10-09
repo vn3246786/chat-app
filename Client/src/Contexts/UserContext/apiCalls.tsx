@@ -22,7 +22,7 @@ try {
 export async function login(user:loginData,dispatchFuctions:UserDispatchFuctions){
     dispatchFuctions.handleLoading()
 try {
-    const res =await axios.post("/api/users/login",user)
+    const res =await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/users/login`,user)
     if(findError(res.data)){
         dispatchFuctions.handleError(res.data)
         toast.error(res.data)
