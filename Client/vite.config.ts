@@ -10,7 +10,7 @@ export default defineConfig(({})=>{
  return {
     server:{
       proxy:{
-        "/api":`${process.env.VITE_SERVER_URL}`
+        "/api/":`${process.env.VITE_SERVER_URL}`
       }
     },
     plugins: [react()],
