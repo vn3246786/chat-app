@@ -11,12 +11,6 @@ const bodyParser = require("body-parser");
 const Users = require("./Models/Users");
 const { type } = require("os");
 
-app.use(cors(
-    {
-        origin:process.env.CLIENT_URL,
-        methods:['GET', 'PUT', 'POST']
-    }
-))
 app.use(bodyParser.json())
 app.use(express.json())
 const server = createServer(app)
